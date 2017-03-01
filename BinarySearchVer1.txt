@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+void insertionsort(long int arr[], int size)
+{
+	for (int i=0; i<size; i++)
+{
+	int value  = arr[i];
+	int hole = i;
+	while(hole > 0 && arr[hole-1]> value)
+	{
+		arr[hole]= arr[hole-1];
+		hole = hole-1;
+		
+	}
+	arr[hole]=value;
+
+	}
+}
+
+int main()
+{
+	int size, queryNum;
+	long int arr[1000];
+	
+	cin >> size;
+	int userSize = size;
+	
+	for(int i=0; i<userSize; i++)
+	{ cin>> arr[i];}
+	
+insertionsort(arr, userSize);
+	
+	for(int j=0; j<userSize; j++)
+	{ cout<<  arr[j] <<endl;}
+	
+
+    return 0;
+}
